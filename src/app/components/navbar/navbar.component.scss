@@ -1,47 +1,85 @@
-.navbar {
+.container {
     width: 100%;
-    height: 60px;
-    background-color: #FBFBFB;
+    padding: 20px;
 }
 
-.container {
+.navbar {
+    background-color: #ffffff;
+    width: calc(100vw - 40px);
+    height: 60px;
+    border-radius: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 7.5px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    justify-content: space-between;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .logo {
-    width: 45px;
+    cursor: pointer;
+    width: 40px;
     height: auto;
-    margin-right: 7.5px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.btn {
-    width: 80px;
+.options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.option {
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 40px;
     height: 35px;
     border-radius: 5px;
     border: none;
-    margin: 0 5px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: #373737; 
+    }
+
+    img {
+        height: 30px;
+        width: auto;
+    }
+
+    &:hover {
+        background-color: #D6C991; 
+    }
+
+    &:active {
+        background-color: #D6C991; 
+     }
 }
 
-.btn1 {
+.active {
+    // border: 1px solid #BFD87B;
+    a {
+        color: #BFD87B;
+    }
+
+    img {
+        
+    }
+
+    &:hover {
+        a {
+            color: #373737;  
+        }
+        background-color: #BFD87B;
+    }
+}
+
+.btncolors {
     background-color: #BFD87B;
-}
-
-.btn2 {
     background-color: #D6C991;
-}
-
-.btn3 {
     background-color: #E3E8CF;
-}
-
-.btn4 {
     background-color: #373737;
-}
-
-.btn5 {
-    background-color: #FFA8B5;
 }

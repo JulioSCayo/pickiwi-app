@@ -1,0 +1,74 @@
+.main {
+    margin: 0;
+    padding: 0;
+    background-color: #fdfff6;
+    // background-color: #f8f8f8;
+}
+
+.container {
+    height: calc(100vh - 100px);
+    margin: 0;
+    padding: 0 20px;
+}
+
+.list-config {
+    background-color: #ffffff;
+    width: calc(100vw - 40px);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.record {
+    background-color: #ffffff;
+    width: calc(100vw - 40px);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 20px;
+    font-size: 20px;
+
+    .record-date {
+
+    }
+
+    .record-bins {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .record-members {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .record-payment {
+        cursor: pointer;
+    }
+
+    img {
+        margin-left: 5px;
+        height: 25px;
+        width: auto;
+    }
+}
+
+.paid {
+    color: #76a102;
+}
+
+.not-paid {
+    color: #E72200;
+}

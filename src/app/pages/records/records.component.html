@@ -1,0 +1,15 @@
+<div class="main">
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="list-config">
+            List config
+        </div>
+        <div class="record" *ngFor="let record of records$ | async">
+            <div class="record-date">{{ record.createdAt | date:'shortDate' }}</div>
+            <div class="record-bins">{{ record.bins }}<img src="assets/icons/bin.png" alt=""></div>
+            <div class="record-members">{{ record.members }}<img src="assets/icons/members.png" alt=""></div>
+            <div class="record-payment paid" *ngIf="record.paid" (click)="record.paid = !record.paid">${{ record.payment.toFixed(0) }}</div>
+            <div class="record-payment not-paid" *ngIf="!record.paid" (click)="record.paid = !record.paid">${{ record.payment.toFixed(0) }}</div>
+        </div>
+    </div>
+</div>

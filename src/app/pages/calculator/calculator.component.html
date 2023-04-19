@@ -1,0 +1,28 @@
+<div class="main">
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="calculator">
+            <form [formGroup]="formCalculator" class="form-container">
+                <div class="input-container">
+                    <label for="">Number of bins</label>
+                    <input type="number" placeholder="0" formControlName="bins">
+                </div>
+                <div class="input-container">
+                    <label for="">Pay per bin</label>
+                    <input type="number" placeholder="0" formControlName="bin_payment">
+                </div>
+                <div class="input-container">
+                    <label for="">Number of members</label>
+                    <input type="number" placeholder="0" formControlName="members">
+                </div>
+                <div class="input-container">
+                    <label for="">Total payment</label>
+                    <input type="number" placeholder="0" formControlName="payment">
+                </div>
+                <div class="input-container">
+                    <button (click)="calculate()">Calculate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

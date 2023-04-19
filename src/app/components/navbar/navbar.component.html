@@ -1,10 +1,30 @@
-<div class="navbar">
-    <div class="container">
-        <img src="../../../favicon.ico" alt="Pikiwi" class="logo">
-        <button class="btn btn1"></button>
+<div class="container">
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="favicon.ico" alt="Pikiwi" class="logo" [routerLink]="['/home']">
+        </div>
+
+        <ul class="options">
+            <li class="option" routerLinkActive="active" [routerLink]="['/calculator']">
+                <img src="assets/icons/calculator.png" alt="">
+                <!-- <a>Calculator</a> -->
+            </li>
+            <li class="option" routerLinkActive="active" [routerLink]="['/records']">
+                <img src="assets/icons/records.png" alt="">
+                <!-- <a>Stats</a> -->
+            </li>
+            <li class="option" routerLinkActive="active" [routerLink]="['/login']">
+                <img src="assets/icons/login.png" alt="">
+                <!-- <a>Signin</a> -->
+            </li>
+            <li class="option" routerLinkActive="active" [routerLink]="['/signup']">
+                <img src="assets/icons/signup.png" alt="">
+                <!-- <a>Signup</a> -->
+            </li>
+        </ul>
+        <!-- <button class="btn btn1"></button>
         <button class="btn btn2"></button>
         <button class="btn btn3"></button>
-        <button class="btn btn4"></button>
-        <button class="btn btn5"></button>
+        <button class="btn btn4"></button> -->
     </div>
 </div>

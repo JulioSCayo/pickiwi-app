@@ -1,7 +1,17 @@
 <div class="main">
+    <app-navbar></app-navbar>
     <div class="container">
-        <p>Aquí irá el inicio</p>
-        <input type="text">
-        <button>Calcular</button>
+        <div class="card" [routerLink]="['/calculator']">
+            Quick calculator
+        </div>
+        <div class="card" [routerLink]="['/calculator']">
+            Live calculator
+        </div>
+        <div class="card" [routerLink]="['/login']">
+            Log-in
+        </div>
+        <div class="card" [routerLink]="['/signup']">
+            Sign-up
+        </div>
     </div>
 </div>
