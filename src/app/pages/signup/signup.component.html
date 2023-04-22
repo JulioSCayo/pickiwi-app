@@ -1,6 +1,28 @@
 <div class="main">
     <app-navbar></app-navbar>
-    <div class="container">
-        <h1>Este es el signin</h1>
+    <div class="base-container">
+        <div class="card card-top">
+            <form [formGroup]="formSignup" class="form-container">
+                <div class="input-container">
+                    <label for="">{{ 'username' | translate }}</label>
+                    <input type="text" placeholder="" formControlName="username">
+                </div>
+                <div class="input-container">
+                    <label for="">{{ 'email' | translate }}</label>
+                    <input type="email" placeholder="" formControlName="email">
+                </div>
+                <div class="input-container">
+                    <label for="">{{ 'password' | translate }}</label>
+                    <input type="password" placeholder="" formControlName="password">
+                </div>
+                <div class="input-container">
+                    <label for="">{{ 'confirm_password' | translate }}</label>
+                    <input type="password" placeholder="" formControlName="confirm_password">
+                </div>
+            </form>
+        </div>
+        <div class="input-container">
+            <button (click)="signup()" class="signup">{{ 'signup' | translate }}</button>
+        </div>
     </div>
 </div>

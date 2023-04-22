@@ -1,0 +1,20 @@
+{
+    "number_of_bins": "Número de bins",
+    "pay_per_bin": "Pago por bin",
+    "number_of_members": "Número de integrantes",
+    "company": "Empresa",
+    "type_of_kiwi": "Tipo de kiwi",
+    "total_hours": "Total de horas",
+    "total_smoko_minutes": "Minutos totales de smoko",
+    "total_lunch_minutes": "Minutos totales de lunch",
+    "payment_day": "Día de pago",
+    "more_details": "Más detalles",
+    "less_details": "Menos detalles",
+    "calculate": "Calcular",
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "login": "Iniciar sesión",
+    "email": "Correo electrónico",
+    "confirm_password": "Confirma la contraseña",
+    "signup": "Registrarse"
+}

@@ -1,7 +1,7 @@
 export class Record {
     user_id?: String;
     company?: String;
-    kiwi_type?: String;
+    type_of_kiwi?: String;
     smoko_time?: Number;
     lunch_time?: Number;
     hours?: Number;

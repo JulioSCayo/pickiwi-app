@@ -1,0 +1,20 @@
+{
+    "number_of_bins": "Number of bins",
+    "pay_per_bin": "Pay per bin",
+    "number_of_members": "Number of members",
+    "company": "Company",
+    "type_of_kiwi": "Kind of kiwi",
+    "total_hours": "Total hours",
+    "total_smoko_minutes": "Total smoko minutes",
+    "total_lunch_minutes": "Total lunch minutes",
+    "payment_day": "Payment day",
+    "more_details": "More details",
+    "less_details": "Less details",
+    "calculate": "Calculate",
+    "username": "Username",
+    "password": "Password",
+    "login": "Login",
+    "email": "Email",
+    "confirm_password": "Confirm the password",
+    "signup": "Sign up"
+}

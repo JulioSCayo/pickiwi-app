@@ -1,66 +1,70 @@
-.main {
-    margin: 0;
-    padding: 0;
-    background-color: #fdfff6;
-    // background-color: #f8f8f8;
+// Override class
+.card {
+    margin-bottom: 10px;
 }
 
-.container {
-    height: calc(100vh - 100px);
-    margin: 0;
-    padding: 0 20px;
+label {
+    font-size: 18px;
+    margin: 0 0 5px 0;
 }
 
-.calculator {
-    background-color: #ffffff;
-    width: calc(100vw - 40px);
-    padding: 10px;
-    border-radius: 10px;
+input {
+    text-align: center;
+    min-width: 120px;
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    border: 1px solid #c5c5c5;
+    border-radius: 15px;
+    padding: 0 15px;
+}
+
+.details-btn {
+    height: 30px;
+    border-bottom: 1px solid #373737;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.form-container {
-    width: 100%;
-    padding: 15px 0;
-}
-
-.input-container {
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #373737;
+    cursor: pointer;
 
-    label {
+    p {
         font-size: 18px;
-        margin: 0 0 5px 0;
     }
+    
+    img {
+        margin-left: 5px;
+        height: 20px;
+        width: auto;
+    }
+}
 
-    input {
-        text-align: center;
-        min-width: 120px;
-        width: 50%;
-        height: 40px;
-        font-size: 20px;
-        border: 1px solid #c5c5c5;
-        border-radius: 15px;
-        padding: 0 15px;
-    }
+.calculate {
+    margin-bottom: 10px;
+    min-width: 120px;
+    width: 50%;
+    height: 40px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #BFD87B;
+    border-radius: 15px;
+    transition: all .5s;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-    button {
-        min-width: 120px;
-        width: 50%;
-        height: 40px;
-        font-weight: 500;
-        font-size: 20px;
-        color: #ffffff;
-        background-color: #BFD87B;
-        border-radius: 15px;
+    &:active, &:active {
+        background-color: #96a863;
+        transition: all .5s;
     }
+}
+
+.details {
+    transition: all .5s;
+    overflow: hidden;
+    max-height: 0px;
+}
+
+.active {
+    transition: all .5s;
+    max-height: 1000px;
 }

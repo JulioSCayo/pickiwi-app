@@ -1,6 +1,20 @@
 <div class="main">
     <app-navbar></app-navbar>
-    <div class="container">
-        <h1>Este es el login</h1>
+    <div class="base-container">
+        <div class="card card-top">
+            <form [formGroup]="formLogin" class="form-container">
+                <div class="input-container">
+                    <label for="">{{ 'username' | translate }}</label>
+                    <input type="text" placeholder="" formControlName="username">
+                </div>
+                <div class="input-container">
+                    <label for="">{{ 'password' | translate }}</label>
+                    <input type="password" placeholder="" formControlName="password">
+                </div>
+            </form>
+        </div>
+        <div class="input-container">
+            <button (click)="login()" class="login">{{ 'login' | translate }}</button>
+        </div>
     </div>
 </div>

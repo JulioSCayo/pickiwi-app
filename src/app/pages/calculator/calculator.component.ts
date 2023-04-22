@@ -10,6 +10,7 @@ import { RecordService } from 'src/app/services/record/record.service';
 export class CalculatorComponent implements OnInit{
   
   public formCalculator: FormGroup;
+  public details: Boolean = false;
   
   constructor(
     private formBuilder: FormBuilder,
@@ -17,7 +18,7 @@ export class CalculatorComponent implements OnInit{
   ) { 
     this.formCalculator = this.formBuilder.group({
       company:        ['', []],
-      kiwi_type:      ['', []],
+      type_of_kiwi:   ['', []],
       smoko_time:     ['', []],
       lunch_time:     ['', []],
       hours:          ['', []],
@@ -39,6 +40,14 @@ export class CalculatorComponent implements OnInit{
     return this.formCalculator.controls;
   }
 
+  detailsToggle() {
+    this.details = !this.details;
+    let detailsContainter = document.getElementById("details") as HTMLElement;
+
+    if(this.details) detailsContainter.classList.add("active");
+    else detailsContainter.classList.remove("active");
+  }
+
   calculate() {
     this.formCtrl['payment'].setValue(
       this.formCtrl['bins'].value *
@@ -46,11 +55,8 @@ export class CalculatorComponent implements OnInit{
       this.formCtrl['members'].value
     );
 
-    console.log(this.formCalculator.value.payment.toFixed(3));
-    
-
     this.recordService.createRecord(this.formCalculator.value).subscribe({
-      next: (result) => console.log("Done"),
+      next: (result) => alert("Expected payment " + this.formCtrl['payment'].value),
       error: (error) => console.log(error)      
     });
   }
