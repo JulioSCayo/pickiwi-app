@@ -6,19 +6,22 @@
 
         <ul class="options">
             <li class="option" routerLinkActive="active" [routerLink]="['/calculator']">
-                <img src="assets/icons/calculator.png" alt="">
+                <img src="assets/icons/calculator.png" alt="calculator">
             </li>
-            <li class="option" routerLinkActive="active" [routerLink]="['/timer']">
-                <img src="assets/icons/timer.png" alt="">
+            <li class="option" routerLinkActive="active" [routerLink]="['/timer']" *ngIf="$isAuth">
+                <img src="assets/icons/timer.png" alt="timer">
             </li>
-            <li class="option" routerLinkActive="active" [routerLink]="['/records']">
-                <img src="assets/icons/records.png" alt="">
+            <li class="option" routerLinkActive="active" [routerLink]="['/records']" *ngIf="$isAuth">
+                <img src="assets/icons/records.png" alt="records">
             </li>
-            <li class="option" routerLinkActive="active" [routerLink]="['/login']">
-                <img src="assets/icons/login.png" alt="">
+            <li class="option" routerLinkActive="active" [routerLink]="['/login']" *ngIf="!$isAuth">
+                <img src="assets/icons/login.png" alt="login">
             </li>
-            <li class="option" routerLinkActive="active" [routerLink]="['/signup']">
-                <img src="assets/icons/signup.png" alt="">
+            <li class="option" routerLinkActive="active" [routerLink]="['/signup']" *ngIf="!$isAuth">
+                <img src="assets/icons/signup.png" alt="signup">
+            </li>
+            <li class="option" *ngIf="$isAuth" (click)="logout()">
+                <img src="assets/icons/logout.png" alt="logout">
             </li>
         </ul>
     </div>

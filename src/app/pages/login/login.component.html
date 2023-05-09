@@ -1,20 +1,33 @@
 <div class="main">
-    <app-navbar></app-navbar>
     <div class="base-container">
-        <div class="card card-top">
-            <form [formGroup]="formLogin" class="form-container">
-                <div class="input-container">
-                    <label for="">{{ 'username' | translate }}</label>
-                    <input type="text" placeholder="" formControlName="username">
+        <form [formGroup]="formLogin">
+            <div class="card">
+                <div class="form-container">
+                    <div class="input-container">
+                        <label for="">{{ 'username' | translate }}
+                            <span [ngClass]="
+                                {'red-star': formLogin.get('username')!.errors,
+                                'grey-star': !formLogin.get('username')!.errors}">*</span>
+                        </label>
+                        <input type="text" placeholder="" formControlName="username">
+                    </div>
+                    <div class="input-container">
+                        <label for="">{{ 'password' | translate }}
+                            <span [ngClass]="
+                                {'red-star': formLogin.get('password')!.errors,
+                                'grey-star': !formLogin.get('password')!.errors}">*</span>
+                        </label>
+                        <input type="password" placeholder="" formControlName="password">
+                    </div>
+                    <div class="input-container">
+                        <p class="red-label" *ngIf="formLogin.invalid && 
+                            formLogin.touched">{{ 'check_all_the_fields' | translate }}</p>
+                    </div>
                 </div>
-                <div class="input-container">
-                    <label for="">{{ 'password' | translate }}</label>
-                    <input type="password" placeholder="" formControlName="password">
-                </div>
-            </form>
-        </div>
-        <div class="input-container">
-            <button (click)="login()" class="login">{{ 'login' | translate }}</button>
-        </div>
+            </div>
+            <div class="input-container">
+                <button (click)="login()" class="login">{{ 'login' | translate }}</button>
+            </div>
+        </form>
     </div>
 </div>

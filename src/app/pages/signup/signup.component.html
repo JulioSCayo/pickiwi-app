@@ -1,28 +1,53 @@
 <div class="main">
-    <app-navbar></app-navbar>
     <div class="base-container">
-        <div class="card card-top">
-            <form [formGroup]="formSignup" class="form-container">
-                <div class="input-container">
-                    <label for="">{{ 'username' | translate }}</label>
-                    <input type="text" placeholder="" formControlName="username">
+        <form [formGroup]="formSignup">
+            <div class="card">
+                <div class="form-container">
+                    <div class="input-container">
+                        <label for="">{{ 'username' | translate }}
+                            <span [ngClass]="
+                                {'red-star': formSignup.get('username')!.errors,
+                                'grey-star': !formSignup.get('username')!.errors}">*</span>
+                        </label>
+                        <input type="text" placeholder="" formControlName="username">
+                    </div>
+                    <div class="input-container">
+                        <label for="">{{ 'email' | translate }}
+                            <span [ngClass]="
+                                {'red-star': formSignup.get('email')!.errors,
+                                'grey-star': !formSignup.get('email')!.errors}">*</span>
+                        </label>
+                        <input type="email" placeholder="" formControlName="email">
+                        <p class="red-label" *ngIf="formSignup.get('email')!.errors?.['email'] && 
+                            formSignup.get('email')!.touched">{{ 'invalid_email' | translate }}</p>
+                    </div>
+                    <div class="input-container">
+                        <label for="">{{ 'password' | translate }}
+                            <span [ngClass]="
+                                {'red-star': formSignup.get('password')!.errors,
+                                'grey-star': !formSignup.get('password')!.errors}">*</span>
+                        </label>
+                        <input type="password" placeholder="" formControlName="password" autocomplete="new-password">
+                    </div>
+                    <div class="input-container">
+                        <label for="">{{ 'confirm_password' | translate }}
+                            <span [ngClass]="
+                                {'red-star': formSignup.get('confirm_password')!.errors,
+                                'grey-star': !formSignup.get('confirm_password')!.errors}">*</span>
+                        </label>
+                        <input type="password" placeholder="" formControlName="confirm_password">
+                        <p class="red-label" *ngIf="formSignup.get('confirm_password')!.errors?.['confirmedWrong'] && 
+                            formSignup.get('confirm_password')!.touched">{{ 'passwords_dont_match' | translate }}</p>
+                    </div>
+                    <div class="input-container">
+                        <p class="red-label" *ngIf="formSignup.invalid && 
+                            formSignup.touched">{{ 'check_all_the_fields' | translate }}</p>
+                    </div>
                 </div>
-                <div class="input-container">
-                    <label for="">{{ 'email' | translate }}</label>
-                    <input type="email" placeholder="" formControlName="email">
-                </div>
-                <div class="input-container">
-                    <label for="">{{ 'password' | translate }}</label>
-                    <input type="password" placeholder="" formControlName="password">
-                </div>
-                <div class="input-container">
-                    <label for="">{{ 'confirm_password' | translate }}</label>
-                    <input type="password" placeholder="" formControlName="confirm_password">
-                </div>
-            </form>
-        </div>
-        <div class="input-container">
-            <button (click)="signup()" class="signup">{{ 'signup' | translate }}</button>
-        </div>
+            </div>
+            <div class="input-container">
+                <button (click)="signup()" class="signup">{{ 'signup' | translate }}</button>
+            </div>
+        </form>
     </div>
 </div>

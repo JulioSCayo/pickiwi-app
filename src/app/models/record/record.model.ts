@@ -6,7 +6,7 @@ export class Record {
     lunch_time?: Number;
     hours?: Number;
     bins!: Number;
-    hour_payment?: Number;
+    hourly_payment?: Number;
     bin_payment!: Number;
     members!: Number;
     payment!: Number;

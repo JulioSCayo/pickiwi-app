@@ -1,58 +1,85 @@
 <div class="main">
-    <app-navbar></app-navbar>
     <div class="base-container">
-        <div class="card card-top calculator">
-            <form [formGroup]="formCalculator" class="form-container">
-                <div class="input-container">
-                    <label for="">{{ 'number_of_bins' | translate }}</label>
-                    <input type="number" placeholder="0" formControlName="bins">
+        <!-- <div class="card" style="height: 100px;">
+            Publicidad
+        </div> -->
+        <form [formGroup]="formCalculator">
+            <div class="card calculator">
+                <div class="form-container">
+                    <div class="input-container">
+                        <label for="">{{ 'number_of_bins' | translate }}
+                            <span [ngClass]="
+                                {'red-star': formCalculator.get('bins')!.errors,
+                                'grey-star': !formCalculator.get('bins')!.errors}">*</span>
+                            </label>
+                        <input type="number" placeholder="0" formControlName="bins">
+                    </div>
+                    <div class="input-container">
+                        <label for="">{{ 'pay_per_bin' | translate }}
+                            <span [ngClass]="
+                                {'red-star': formCalculator.get('bin_payment')!.errors,
+                                'grey-star': !formCalculator.get('bin_payment')!.errors}">*</span>
+                            </label>
+                        <input type="number" placeholder="0" formControlName="bin_payment">
+                    </div>
+                    <div class="input-container">
+                        <label for="">{{ 'number_of_members' | translate }}
+                            <span [ngClass]="
+                                {'red-star': formCalculator.get('members')!.errors,
+                                'grey-star': !formCalculator.get('members')!.errors}">*</span>
+                            </label>
+                        <input type="number" placeholder="0" formControlName="members">
+                    </div>
+                    <div id="details" class="details">
+                        <div class="input-container">
+                            <label for="">{{ 'total_hours' | translate }}</label>
+                            <input type="number" placeholder="0" formControlName="hours">
+                        </div>
+                        <div class="input-container">
+                            <label for="">{{ 'total_smoko_minutes' | translate }}</label>
+                            <input type="number" placeholder="0" formControlName="smoko_time">
+                        </div>
+                        <div class="input-container">
+                            <label for="">{{ 'total_lunch_minutes' | translate }}</label>
+                            <input type="number" placeholder="0" formControlName="lunch_time">
+                        </div>
+                        <div class="input-container">
+                            <label for="">{{ 'hourly_payment' | translate }}</label>
+                            <input type="number" placeholder="0" formControlName="hourly_payment">
+                        </div>
+                        <div class="input-container">
+                            <label for="">{{ 'company' | translate }}</label>
+                            <input type="text" placeholder="" formControlName="company" class="input-large">
+                        </div>
+                        <div class="input-container">
+                            <label for="">{{ 'type_of_kiwi' | translate }}</label>
+                            <input type="text" placeholder="" formControlName="type_of_kiwi" class="input-large">
+                        </div>
+                        <div class="input-container">
+                            <label for="">{{ 'payment_day' | translate }}</label>
+                            <input type="date" placeholder="" formControlName="payment_day" class="input-large">
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <div class="details-btn" (click)="detailsToggle()">
+                            <p for="" *ngIf="!details">{{ 'more_details' | translate }}</p>
+                            <p for="" *ngIf="details">{{ 'less_details' | translate }}</p>
+                            <img src="assets/icons/down-arrow.png" alt="" *ngIf="!details">
+                            <img src="assets/icons/up-arrow.png" alt="" *ngIf="details">
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <p class="red-label" *ngIf="formCalculator.invalid && 
+                            formCalculator.touched">{{ 'check_all_the_fields' | translate }}</p>
+                    </div>
                 </div>
-                <div class="input-container">
-                    <label for="">{{ 'pay_per_bin' | translate }}</label>
-                    <input type="number" placeholder="0" formControlName="bin_payment">
-                </div>
-                <div class="input-container">
-                    <label for="">{{ 'number_of_members' | translate }}</label>
-                    <input type="number" placeholder="0" formControlName="members">
-                </div>
-                <div id="details" class="details">
-                    <div class="input-container">
-                        <label for="">{{ 'company' | translate }}</label>
-                        <input type="text" placeholder="" formControlName="company">
-                    </div>
-                    <div class="input-container">
-                        <label for="">{{ 'type_of_kiwi' | translate }}</label>
-                        <input type="text" placeholder="" formControlName="type_of_kiwi">
-                    </div>
-                    <div class="input-container">
-                        <label for="">{{ 'total_hours' | translate }}</label>
-                        <input type="number" placeholder="0" formControlName="hours">
-                    </div>
-                    <div class="input-container">
-                        <label for="">{{ 'total_smoko_minutes' | translate }}</label>
-                        <input type="number" placeholder="0" formControlName="smoko_time">
-                    </div>
-                    <div class="input-container">
-                        <label for="">{{ 'total_lunch_minutes' | translate }}</label>
-                        <input type="number" placeholder="0" formControlName="lunch_time">
-                    </div>
-                    <div class="input-container">
-                        <label for="">{{ 'payment_day' | translate }}</label>
-                        <input type="datetime-local" placeholder="" formControlName="payment_day">
-                    </div>
-                </div>
-                <div class="input-container">
-                    <div class="details-btn" (click)="detailsToggle()">
-                        <p for="" *ngIf="!details">{{ 'more_details' | translate }}</p>
-                        <p for="" *ngIf="details">{{ 'less_details' | translate }}</p>
-                        <img src="assets/icons/down-arrow.png" alt="" *ngIf="!details">
-                        <img src="assets/icons/up-arrow.png" alt="" *ngIf="details">
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="input-container">
-            <button (click)="calculate()" class="calculate">{{ 'calculate' | translate }}</button>
-        </div>
+            </div>
+            <div class="input-container">
+                <button (click)="calculate()" class="calculate">{{ 'calculate' | translate }}</button>
+            </div>
+        </form>
+        <!-- <div class="card" style="height: 100px;">
+            Publicidad
+        </div> -->
     </div>
 </div>

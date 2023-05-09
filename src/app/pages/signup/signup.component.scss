@@ -30,7 +30,7 @@ input {
     transition: all .5s;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-    &:active, &:active {
+    &:hover, &:active {
         background-color: #96a863;
         transition: all .5s;
     }

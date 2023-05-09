@@ -25,6 +25,10 @@ export class RecordService {
     return this.http.get(environment.apiUrl + 'record/find/' + id);
   }
 
+  findAllUserRecords(id: string) {
+    return this.http.get(environment.apiUrl + 'record/all/' + id);
+  }
+
   findAllRecords() {
     return this.http.get(environment.apiUrl + 'record/all');
   }

@@ -1,17 +1,64 @@
 <div class="main">
-    <app-navbar></app-navbar>
     <div class="base-container">
-        <div class="card card-top" [routerLink]="['/calculator']">
-            Quick calculator
+        <div class="input-container">
+            <h1>Welcome to Pickiwi</h1>
         </div>
-        <div class="card" [routerLink]="['/calculator']">
-            Live calculator
-        </div>
-        <div class="card" [routerLink]="['/login']">
-            Log-in
-        </div>
-        <div class="card" [routerLink]="['/signup']">
-            Sign-up
+        <div class="flexbox-container">
+            <div class="card" [routerLink]="['/calculator']">
+                <div class="input-container">
+                    <label>Quick calculator</label>
+                    <img src="assets/icons/calculator.png" alt="calculator">
+                </div>
+            </div>
+            <div class="card" [routerLink]="['/timer']">
+                <div class="input-container">
+                    <label>Live calculator</label>
+                    <img src="assets/icons/timer.png" alt="timer">
+                </div>
+            </div>
+            <div class="card" [routerLink]="['/records']">
+                <div class="input-container">
+                    <label>Records and stats</label>
+                    <img src="assets/icons/records.png" alt="records">
+                </div>
+            </div>
+            <div class="card" [routerLink]="['/login']">
+                <div class="input-container">
+                    <label>Login</label>
+                    <img src="assets/icons/login.png" alt="login">
+                </div>
+            </div>
+            <div class="card" [routerLink]="['/signup']">
+                <div class="input-container">
+                    <label>Signup</label>
+                    <img src="assets/icons/signup.png" alt="signup">
+                </div>
+            </div>
+            <div class="card" (click)="logout()">
+                <div class="input-container">
+                    <label>Logout</label>
+                    <img src="assets/icons/logout.png" alt="logout">
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<!-- <li class="option" routerLinkActive="active" [routerLink]="['/calculator']">
+    <img src="assets/icons/calculator.png" alt="calculator">
+</li>
+<li class="option" routerLinkActive="active" [routerLink]="['/timer']" *ngIf="$isAuth">
+    <img src="assets/icons/timer.png" alt="timer">
+</li>
+<li class="option" routerLinkActive="active" [routerLink]="['/records']" *ngIf="$isAuth">
+    <img src="assets/icons/records.png" alt="records">
+</li>
+<li class="option" routerLinkActive="active" [routerLink]="['/login']" *ngIf="!$isAuth">
+    <img src="assets/icons/login.png" alt="login">
+</li>
+<li class="option" routerLinkActive="active" [routerLink]="['/signup']" *ngIf="!$isAuth">
+    <img src="assets/icons/signup.png" alt="signup">
+</li>
+<li class="option" *ngIf="$isAuth" (click)="logout()">
+    <img src="assets/icons/logout.png" alt="logout">
+</li> -->
